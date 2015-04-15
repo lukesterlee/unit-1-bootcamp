@@ -3,26 +3,51 @@
  */
 public class Bonus {
 
-    public static void collatz(long number, long count) {
+    public static long collatz(long number, long count) {
+
+        //System.out.print(number + " -> ");
+
+        if (number == 1 || number == 0) {
+            return count;
+        } else if (number % 2 == 0) {
+            return collatz(number/2, ++count);
+        } else {
+            return collatz((3 * number) + 1, ++count);
+        }
+
+    }
+
+    public static void printCollatz(long number, long count) {
 
         System.out.print(number + " -> ");
 
         if (number == 1 || number == 0) {
-            System.out.print("Total : " + count);
             return;
         } else if (number % 2 == 0) {
-            collatz(number/2, ++count);
+            printCollatz(number / 2, ++count);
         } else {
-            collatz((3 * number) + 1, ++count);
+            printCollatz((3 * number) + 1, ++count);
         }
 
     }
 
     public static void main(String[] args) {
 
+        long top = 0;
 
-        collatz(345675, 1);
+        for (int i = 2; i < 5000; i++) {
 
+            long current = collatz(i, 1);
+            if (current > top) {
+                printCollatz(i, 1);
+                System.out.println();
+                top = current;
+            }
+
+        }
+
+
+        System.out.println(top);
 
     }
 
