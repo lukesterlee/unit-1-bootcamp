@@ -3,6 +3,8 @@
  * Created by alexandraqin on 4/14/15.
  */
 
+import com.stripe.Stripe;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
@@ -11,6 +13,8 @@ import java.util.Scanner;
 public class UsingAPIs {
 
   public static void main (String args[]) throws FileNotFoundException {
+
+      Stripe.apiKey = "sk_test_ri5pdNRsAUVkUv238lCIFTB0";
 
       File file = new File("/Users/Willee/Desktop/accesscode-forks/unit-1-bootcamp/resources/pg98.txt");
       Scanner input = new Scanner(file);
