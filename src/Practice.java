@@ -11,10 +11,15 @@ public class Practice {
             return;
         }
 
-        print(walker.next);
-        System.out.println(walker.data);
+        //print(walker.next);
+        //System.out.println(walker.data);
     }
 
+    public static void print(int number) {
+
+        print(number-1);
+        System.out.println(number);
+    }
 
 
     public static void main(String[] args) {

@@ -17,6 +17,8 @@ public class Bonus {
 
     }
 
+
+
     public static void printCollatz(long number, long count) {
 
         System.out.print(number + " -> ");
