@@ -37,12 +37,13 @@ public class Bonus {
 
         long top = 0;
 
-        for (int i = 2; i < 5000; i++) {
+        for (int i = 2; i <= 3000000; i++) {
 
             long current = collatz(i, 1);
             if (current > top) {
-                printCollatz(i, 1);
-                System.out.println();
+                //printCollatz(i, 1);
+                System.out.println(i);
+                //System.out.println();
                 top = current;
             }
 

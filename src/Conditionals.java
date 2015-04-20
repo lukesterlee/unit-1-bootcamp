@@ -96,6 +96,8 @@ public class Conditionals {
         return (average == a || average == b || average == c);
     }
 
+
+
     public static void main (String args[]) {
 
         System.out.println(lotteryTicket(1,2,3));

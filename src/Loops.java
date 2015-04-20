@@ -29,10 +29,38 @@ public class Loops {
 
     }
 
+    public static int sumNumbers(String text) {
+        int result;
+        String number;
+
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isDigit(text.charAt(i))) {
+                for (int j = i; j < text.length(); j++) {
+                    while (Character.isDigit(text.charAt(j))) {
+                        //number +=
+                    }
+                }
+
+
+            }
+        }
+
+        return 0;
+    }
+
     public static String wordEnds(String text, String word) {
-
         String result = "";
+        int index;
+        while (text.contains(word)) {
+            index = text.indexOf(word);
+            if (index-1 != -1)
+                result += text.charAt(index-1) + "";
 
+            if (index+2 != text.length())
+                result += text.charAt(index+2) + "";
+
+            text = text.replaceFirst(word, "");
+        }
         return result;
     }
 
@@ -47,6 +75,9 @@ public class Loops {
 
 
         //numberPuzzle();
-        digits();
+        //digits();
+        System.out.println(wordEnds("abcXY123XYijk", "XY"));
+        System.out.println(wordEnds("XY123XY", "XY"));
+        System.out.println(wordEnds("XY1XY", "XY"));
     }
 }
