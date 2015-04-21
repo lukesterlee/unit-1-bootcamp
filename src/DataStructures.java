@@ -21,6 +21,10 @@ public class DataStructures {
         pod.put("Vanice Yee", 27);
         pod.put("Luke Lee", 29);
 
+        for (String name : pod.keySet()) {
+            System.out.println(name + " : " + pod.get(name));
+        }
+
     }
 
     public static boolean canRentACar(HashMap<String, Integer> pod) {
@@ -41,12 +45,18 @@ public class DataStructures {
 
     public static int countClumps(ArrayList<Integer> numbers) {
         int count = 0;
-        for (int i = 0; i < numbers.size() - 2; i++) {
-            if (numbers.get(i) == numbers.get(i+1)) {
+        int number;
+        boolean isClump = false;
+        for (int i = 0; i < numbers.size(); i++) {
+            number = numbers.get(i);
+            for (int j = i + 1; j < numbers.size() && number == numbers.get(j); i++, j++) {
+                isClump = true;
+            }
+            if (isClump) {
+                count++;
+                isClump = false;
             }
         }
-
-
         return count;
     }
 
@@ -103,8 +113,11 @@ public class DataStructures {
         list3.add(2);
         list3.add(2);
         list3.add(3);
+        list3.add(3);
         list3.add(4);
         list3.add(4);
+
+        accessCoders();
 
         System.out.println(countClumps(list1));
         System.out.println(countClumps(list2));

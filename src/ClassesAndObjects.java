@@ -35,7 +35,6 @@ public class ClassesAndObjects {
 
     public static void main (String args[]) {
 
-
         Cat c1 = new Cat("Garfield");
         Cat c2 = new Cat("Pink Panther");
         Cat c3 = new Cat("Catwoman");
@@ -47,7 +46,6 @@ public class ClassesAndObjects {
         c1.setAge(10);
         c2.setAge(8);
         c3.setAge(30);
-
 
     }
 }

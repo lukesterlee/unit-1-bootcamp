@@ -29,23 +29,27 @@ public class Loops {
 
     }
 
+    // looks dirty, I will come back for this.
     public static int sumNumbers(String text) {
-        int result;
-        String number;
-
+        int result = 0;
         for (int i = 0; i < text.length(); i++) {
             if (Character.isDigit(text.charAt(i))) {
-                for (int j = i; j < text.length(); j++) {
-                    while (Character.isDigit(text.charAt(j))) {
-                        //number +=
-                    }
+                String number = "";
+                for (int j = i; j < text.length() && Character.isDigit(text.charAt(j)); i++, j++) {
+                    number += text.charAt(j);
                 }
-
-
+                result += Integer.parseInt(number);
             }
         }
+        return result;
+    }
 
-        return 0;
+    public static String notReplace(String text) {
+
+        String word = "is";
+        String result = "a";
+
+        return "1";
     }
 
     public static String wordEnds(String text, String word) {
@@ -79,5 +83,16 @@ public class Loops {
         System.out.println(wordEnds("abcXY123XYijk", "XY"));
         System.out.println(wordEnds("XY123XY", "XY"));
         System.out.println(wordEnds("XY1XY", "XY"));
+
+        // sumNumbers test.
+        System.out.println("\nsumNumbers test : ");
+        System.out.println(sumNumbers("abc123xyz"));
+        System.out.println(sumNumbers("aa11b33"));
+        System.out.println(sumNumbers("7 11"));
+
+        // notReplace test.
+        System.out.println(notReplace("is test"));
+        System.out.println(notReplace("is-is"));
+        System.out.println(notReplace("This is right"));
     }
 }
