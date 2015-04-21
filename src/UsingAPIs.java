@@ -3,6 +3,7 @@
  * Created by alexandraqin on 4/14/15.
  */
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.stripe.Stripe;
 import com.stripe.exception.*;
@@ -39,6 +40,7 @@ public class UsingAPIs {
       luke.put("account_balance", 10000);
 
       Customer lukester = Customer.create(luke);
+      Gson info = lukester;
       System.out.println(lukester);
 
 

@@ -33,6 +33,13 @@ public class Bonus {
 
     }
 
+    public static void coin() {
+        int count = 0;
+        int[] values = new int[] {1, 2, 5, 10, 20, 50, 100, 200};
+        int[] max = new int[] {200, 100, 40, 20, 10, 4, 2, 1};
+
+    }
+
     public static void main(String[] args) {
 
         long top = 0;

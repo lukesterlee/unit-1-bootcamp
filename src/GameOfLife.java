@@ -9,19 +9,18 @@ public class GameOfLife {
 
     File file;
     Scanner input;
-    String[][] map;
+    final char[][] MAP = new char[25][75];
 
     public GameOfLife(String fileName) throws FileNotFoundException {
-        map = new String[25][75];
         file = new File(fileName);
         input = new Scanner(file);
 
-        String row;
+        String line;
 
-        for (int i = 0; i < 25; i++) {
-            row = input.nextLine();
+        for (int row = 0; row < 25; row++) {
+            line = input.nextLine();
             for (int j = 0; j < 75; j++) {
-                map[i][j] = row.charAt(j) + "";
+                MAP[row][j] = line.charAt(j);
             }
         }
 
@@ -29,12 +28,21 @@ public class GameOfLife {
     }
 
     public void printMap() {
-        for (int i = 0; i < 25; i++) {
-            for (int j = 0; j < 75; j++) {
-                System.out.print(map[i][j] + " ");
+        for (int row = 0; row < 25; row++) {
+            for (int col = 0; col < 75; col++) {
+                System.out.print(MAP[row][col] + " ");
             }
             System.out.println();
         }
+    }
+
+    public int checkNeighbor(int row, int col) {
+
+        return 0;
+    }
+
+    public void nextStage() {
+
     }
 
     public static void main(String[] args) {
